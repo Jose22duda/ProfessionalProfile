@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Professional Profile</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #ffffff;
+            --dark: #121212;
+            --accent: #00a8ff;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #007CF0 0%, #00DFD8 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-6: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header with Profile */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--secondary);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary);
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .profile-circle::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--accent), transparent);
+            animation: rotate 3s linear infinite;
+            z-index: -1;
+        }
+        
+        .profile-circle:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 20px 50px rgba(0, 168, 255, 0.3);
+        }
+        
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: slideIn 1.2s ease;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            animation: slideIn 1.4s ease;
+        }
+        
+        .social-links a {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.2);
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        nav ul li a:hover::before {
+            left: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+            background: rgba(0, 168, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+        }
+        
+        /* Main Content */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-3);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Background Section */
+        .background-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Education Section */
+        .education-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 12px 30px;
+            background: none;
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            margin: 0 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .tab-btn:hover::before,
+        .tab-btn.active::before {
+            left: 0;
+        }
+        
+        .tab-btn:hover,
+        .tab-btn.active {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .education-item {
+            background: var(--secondary);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 168, 255, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .education-item:hover::before {
+            left: 100%;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-left-color: var(--accent);
+        }
+        
+        .education-item h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .education-item .date {
+            color: #171010;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .course-category {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            transition: height 0.3s ease;
+        }
+        
+        .course-category:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .course-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-category h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            position: relative;
+        }
+        
+        .course-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .course-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--accent);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-code {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .course-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin: 5px 0;
+        }
+        
+        .course-year {
+            color: #666;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        
+        .course-description {
+            color: #555;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        
+        .project-info {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 10px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .project-description {
+            color: #555;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background: rgba(0, 86, 179, 0.1);
+        }
+        
+        .github-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 86, 179, 0.3);
+        }
+        
+        .github-link i {
+            margin-right: 5px;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 168, 255, 0.05), transparent);
+            transition: right 0.5s ease;
+        }
+        
+        .experience-item:hover::before {
+            right: 100%;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        
+        .experience-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .experience-company {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .experience-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: var(--gradient-2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .skills-category {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skills-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-1);
+            transition: all 0.3s ease;
+        }
+        
+        .skills-category:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .skills-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skills-category h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-tile {
+            background: var(--primary);
+            color: white;
+            padding: 15px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .skill-tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .skill-tile:hover::before {
+            left: 100%;
+        }
+        
+        .skill-tile:hover {
+            background: var(--accent);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 168, 255, 0.3);
+        }
+        
+        .skill-tile:nth-child(even):hover {
+            background: var(--gradient-2);
+        }
+        
+        .skill-tile:nth-child(3n):hover {
+            background: var(--gradient-4);
+        }
+        
+        .skill-tile:nth-child(4n):hover {
+            background: var(--gradient-5);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #2c3e50 100%);
+            color: var(--secondary);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-content h3 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(0, 168, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .courses-container {
+                flex-direction: column;
+            }
+            
+            .education-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Floating Shapes */
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    
+@keyframes animatedBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body {
+  background: linear-gradient(270deg, #0056b3, #00a8ff, #1e1e2f, #2a2a40);
+  background-size: 800% 800%;
+  animation: animatedBG 20s ease infinite;
+  color: #ffffff;
+}
+
+
+
+</style>
+</head>
+<body>
+<!-- Header with Profile -->
+<header>
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="container">
+<div class="profile-circle">
+<img alt="Profile Picture" src="FullSizeRender-5.jpg"/>
+</div>
+<div class="header-content">
+<h1>Vusumzi Joseph Duda</h1>
+<p>UCT Bsc Computer Science & Information Systems | Moshal Scholar | Siyandisa Alumni | Promaths Alumni | SAEON Alumni</p>
+</div>
+</div>
+</header>
+<!-- Navigation -->
+<nav>
+<div class="container">
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="container">
+<!-- Background Section -->
+<section id="background">
+<div class="section-title">
+<h2>Background</h2>
+</div>
+<div class="background-content">
+<p>I am a final-year student at the University of Cape Town, currently studying Computer Science and Information Systems. Born and raised in Cape Town, I’ve always been curious about how things work, whether it’s in tech or music.</p>
+<p>Outside of academics, I’m a self-taught musician who enjoys learning and playing different instruments. I’m someone who values diversity, learns fast, and genuinely enjoys being around people. Whether I’m working on a group project or jamming out to a new tune, I bring energy, focus, and a sense of fun to everything I do.</p>
+<p>I believe in leading by example, being the change I want to see. Ethics and integrity guide my actions, and I strive to grow not only as a professional but also as a person.</p>
+</div>
+</section>
+<!-- Education Section -->
+<section id="education">
+<div class="section-title">
+<h2>Education</h2>
+</div>
+<div class="education-tabs">
+<button class="tab-btn active" data-tab="highschool">High School</button>
+<button class="tab-btn" data-tab="tertiary">Tertiary Education</button>
+</div>
+<!-- High School Tab -->
+<div class="tab-content active" id="highschool">
+  <div class="education-item">
+    <h3>Sophumelela High School [GPA-85%]</h3>
+    <span class="date">2017 - 2021</span>
+    <p style="color: black;">
+      Matriculated with 6 Distinctions.<br>
+      Received awards for Maths and Physical Science from Investec.<br>
+      Top Performer at School.<br>
+      Siyandisa Achivers Scholarship Recipient.<br>
+    </p>
+    <div class="courses-container">
+      <div class="course-category">
+        <h4>Main Subjects</h4>
+        <div class="course-item">
+          <div class="course-name">Mathematics [92%]</div>
+          <div class="course-description">NSC Maths and Advanced Mathematics</div>
+        </div>
+        <div class="course-item">
+          <div class="course-name">Physical Science [89%]</div>
+          <div class="course-description">Physics and Chemistry fundamentals</div>
+        </div>
+        <div class="course-item">
+          <div class="course-name">Life Science [84%]</div>
+          <div class="course-description">Biology and life sciences</div>
+        </div>
+        <div class="course-item">
+          <div class="course-name">Geography [83%]</div>
+          <div class="course-description">Climatology and Geormophology</div>
+        </div>
+      </div>
+      <!-- Activities Section -->
+      <div class="course-category">
+        <h4>Activities & Leadership</h4>
+        <div class="course-item">
+          <div class="course-name">Soph's Eye Newspaper editor</div>
+          <div class="course-description"> Was the editor of the school Newspaper.<br> Taught journalism skills to fellow students.</div>
+        </div>
+        <div class="course-item">
+          <div class="course-name">Maths Tutor</div>
+          <div class="course-description">Volunteered to help Grade 10–12 learners improve their performance in Maths</div>
+        </div>
+        <div class="course-item">
+          <div class="course-name">South African Environmental Observation Network</div>
+          <div class="course-description">Did Science projects under SAEON & NRF. <br>Presented at the All Atlantic Ocean Forum.<br>
+                                           Sunday World Unsung Heroes of 2021<br>
+                                           Featured at different Radio Stations for Youth Month. </div>
+        </div>
+        <div class="course-item">
+          <div class="course-name">Debate Team</div>
+          <div class="course-description">Participated in inter-school debates and public speaking events.<br></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tertiary Education Tab -->
+<div class="tab-content" id="tertiary">
+<div class="education-item">
+<h3>University of Cape Town</h3>
+<span class="date"> Bsc in Computer Science & Information Systems [2022 - 2025]</span>
+<p style="color: black;"> Courses & relevant projects.</p>
+<div class="courses-container">
+<!-- Computer Science Courses -->
+<div class="course-category">
+<h4>Computer Science</h4>
+<div class="course-item">
+<div class="course-code">CSC 1010H (Python)</div>
+<div class="course-name">Introduction to Programming</div>
+<div class="course-year">2022</div>
+<div class="course-description">Comprehensive study of programming fundamentals, including syntax, control structures, data types, and algorithms. </div>
+<div class="project-info">
+<div ></div>
+
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">CSC 1011H (Python & Java)</div>
+<div class="course-name">Object Orientated Programming</div>
+<div class="course-year">2023</div>
+<div class="course-description">OOP principles and SQL</div>
+<div class="project-info">
+<div class="project-title">Project: BattleShip GameS</div>
+<div class="project-description">A Python implementation of Battleship with client-server architecture, supporting two-player competitive gameplay over a network.</div>
+<a class="github-link" href="https://github.com/Jose22duda/BattleshipPYQT5">
+<i class="fab fa-github"></i> View on GitHub</a>
+
+
+<div class="project-title">Project: Guessing Game</div>
+<div class="project-description">This is a simple desktop GUI application built using PyQt5. The game allows a user to guess a randomly generated number between 1 and 10.</div>
+<a class="github-link" href="https://github.com/Jose22duda/GussingGamePYQT5">
+<i class="fab fa-github"></i> View on GitHub</a>
+
+<div class="project-title">Project: Tetris Game</div>
+<div class="project-description">A modern Tetris game built with Python and PyQt5 with improved UI and gameplay features.</div>
+<a class="github-link" href="https://github.com/Jose22duda/TetrisGamePYQT">
+<i class="fab fa-github"></i> View on GitHub</a>
+
+</div>
+</div>
+
+<div class="course-item">
+<div class="course-code">CSC 2001F (Java & SQL)</div>
+<div class="course-name">Data Structures & Data Bases</div> 
+<div class="course-year">2024</div>
+<div class="course-description">Study of data structures (lists, stacks, queues, trees) and databases (SQL). Emphasis on efficient data storage and retrieval.</div>
+<div class="project-info">
+
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">CSC 2002S (Java)</div>
+<div class="course-name">Parallel Computing and Architecture</div>
+<div class="course-year">2024</div>
+<div class="course-description"> Study of parallel computing concepts, architectures, and programming models. Emphasis on performance optimization and scalability.</div>
+<div class="project-info">
+<div class="project-title">Project: Abelian SandPile Simulation</div>
+<div class="project-description">A Java implementation of the Abelian Sandpile model using parallel processing with Fork/Join framework.</div>
+<a class="github-link" href="https://github.com/Jose22duda/AbelianSandPileSim">
+<i class="fab fa-github"></i>
+                                        View on GitHub
+                                    </a>
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">CSC 3002F (Python & Java) </div>
+<div class="course-name">Computer Networks & Operating Systems</div>
+<div class="course-year">2025</div>
+<div class="course-description">Study of computer networking concepts, protocols, and architectures. Overview of operating system principles, including process management, memory management, and file systems.</div>
+<div class="project-info">
+<div class="project-title">Project: File Sharing System</div>
+<div class="project-description">This project implements a peer-to-peer (P2P) file-sharing system inspired by BitTorrent. It enables decentralized file sharing among multiple peers without relying on a central server for data transfer. The system uses a hybrid UDP/TCP protocol architecture for efficient peer discovery and reliable file transfers.</div>
+<a class="github-link" href="https://github.com/Jose22duda/FileSharing">
+<i class="fab fa-github"></i>
+                                        View on GitHub
+                                    </a>
+<div class="project-title">Project: Swimming Simulation</div>
+<div class="project-description">A multithreaded Java simulation of a 4x100 medley relay race with 10 teams of swimmers.</div>
+<a class="github-link" href="https://github.com/Jose22duda/SwimmingSimulation">
+<i class="fab fa-github"></i>
+                                        View on GitHub
+                                    </a>
+
+</div>
+</div>
+</div>
+<!-- Information Systems Courses -->
+<div class="course-category">
+<h4>Information Systems</h4>
+<div class="course-item">
+<div class="course-code">INF 2009F (UML Tools)</div>
+<div class="course-name">Systems Analysis</div>
+<div class="course-year">2024</div>
+<div class="course-description">Requirements gathering, system modeling, UML diagrams, and user interface design. Focus on understanding business needs and translating them into technical solutions.</div>
+<div class="project-info">
+
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">INF 2011S (C#) </div>
+<div class="course-name">Systems Design & Development</div>
+<div class="course-year">2024</div>
+<div class="course-description"></div>
+<div class="project-info">
+<div class="project-title">Project: Hotel Management System</div>
+<div class="project-description">Design and implementation of a hotel management system using C#. The system includes features for booking management, customer management, and billing.</div>
+<a class="github-link" href="https://github.com/Jose22duda/HotelBookingManagementSystem">
+<i class="fab fa-github"></i>
+                                        View on GitHub
+                                    </a>
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">INF 2006F (SAP Analytics) </div>
+<div class="course-name">Business Intelligence</div>
+<div class="course-year">2025</div>
+<div class="course-description">Data warehousing, OLAP, data mining, and business analytics. Hands-on experience with tools like Tableau and Power BI.</div>
+<div class="project-info">
+
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">INF 3011F</div>
+<div class="course-name">IT Project Management</div>
+<div class="course-year">2025</div>
+<div class="course-description">Fundamentals of project management, including planning, execution, monitoring, and closure of IT projects.</div>
+<div class="project-info">
+<div class="project-title">Project: Fake News Busters</div>
+<div class="project-description">Development of a web prototype to identify and combat fake news using machine learning techniques.(CSIR Project) <br> Due to Privacy Agreements with CSIR, the project is not publicly accessible. Contact me for more information.</div>
+
+</div>
+</div>
+<div class="course-item">
+<div class="course-code">INF 3014F</div>
+<div class="course-name">E-Commerce</div>
+<div class="course-year">2025</div>
+<div class="course-description">E-commerce platforms, digital marketing, payment systems, and online business models. Focus on B2B and B2C e-commerce strategies.</div>
+<div class="project-info">
+<div class="project-title">Project: Joseph Books</div>
+<div class="project-description">Development of an e-commerce website for a local bookstore, featuring online ordering, payment processing, and inventory management. <br> Site compatibility with PC only is just for demonstration purposes.</div>
+<a class="github-link" href="https://dudajoseph22.wixsite.com/africanmusicfestival">
+<i ></i>
+                                        View on Wix
+                                    </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Other Courses -->
+<div class="course-category">
+<h4>Supporting Courses</h4>
+<div class="course-item">
+<div class="course-code">PHI 2043S</div>
+<div class="course-name">Business Ethics</div>
+<div class="course-year">2023</div>
+<div class="course-description">Exploration of ethical issues in business, including corporate social responsibility, ethical decision-making, and the role of ethics in organizational culture.</div>
+</div>
+<div class="course-item">
+<div class="course-code">CML 1001F</div>
+<div class="course-name">Business Law</div>
+<div class="course-year">2023</div>
+<div class="course-description">Introduction to the legal framework governing business operations, including contracts, torts, and regulatory compliance.</div>
+</div>
+<div class="course-item">
+<div class="course-code">MAM 1005H & MAM 1006H</div>
+<div class="course-name">Calculus</div>
+<div class="course-year">2022 & 2023</div>
+<div class="course-description">Differential and integral calculus, with applications in business and social sciences.</div>
+</div>
+<div class="course-item">
+<div class="course-code">STA 2020F (Programming in R)</div>
+<div class="course-name">Applied Statistics</div>
+<div class="course-year">2024</div>
+<div class="course-description">Introduction to statistical concepts and methods using R programming. Topics include data visualization, hypothesis testing, and regression analysis.</div>
+</div>
+<div class="course-item">
+<div class="course-code">Others</div>
+<div class="course-description">Accounting <br> Economics</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section id="experience">
+<div class="section-title">
+<h2>Experience</h2>
+</div>
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="experience-title">Campus Captain</div>
+<div class="experience-company">Siyandisa Trust</div>
+</div>
+<div class="experience-date">Feb 2025 - Present</div>
+</div>
+<div class="experience-description">
+                    Provide Mentorship to the Siyandisa Trust Students at UCT
+and submit monthly reports to the Siyandisa Team.
+Organize social events and help students with funding
+requests.
+                </div>
+</div>
+
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="experience-title">Computer Science Tutor</div>
+<div class="experience-company">University Of Cape Town</div>
+</div>
+<div class="experience-date">Feb 2023 - Present</div>
+</div>
+<div class="experience-description">
+                    Assist students with coursework, guiding problem-solving, and
+providing feedback. Monitor progress and report issues to
+the course Lecturer. Mark Assignments and provide constructive feedback to students.
+                </div>
+
+</div>
+
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="experience-title">Maths & CAT Tutor</div>
+<div class="experience-company">Academic Medic</div>
+</div>
+<div class="experience-date">Jan 2024 - Dec 2024</div>
+</div>
+<div class="experience-description">Provided tutoring services in Mathematics and CAT (Computer Applications Technology) to high school students. Assisted with exam preparation, homework help, and skill development.</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="experience-title">Faculty Mentor & Tutor</div>
+<div class="experience-company">Commerce Faculty |UCT</div>
+</div>
+<div class="experience-date">Feb 2023 - Nov 2024</div>
+</div>
+<div class="experience-description">
+                    Provided mentorship and tutoring to students in the Commerce Faculty. Assisted with academic challenges, study strategies, and personal development.
+                </div>
+</div>
+
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="experience-title">IT Intern</div>
+<div class="experience-company">Hatch Africa</div>
+</div>
+<div class="experience-date">Nov 2022 - Dec 2022</div>
+</div>
+<div class="experience-description">
+                    Assisted with IT support tasks, including troubleshooting hardware and software issues, maintaining computer systems, and providing technical assistance to staff. Gained hands-on experience in IT operations. 
+                </div>
+</div>
+
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+<div class="section-title">
+<h2>Skills</h2>
+</div>
+<div class="skills-container">
+<!-- Technical Skills -->
+<div class="skills-category">
+<h3>Technical Skills</h3>
+<div class="skills-grid">
+<div class="skill-tile">JavaScript</div>
+<div class="skill-tile">Python</div>
+<div class="skill-tile">Java</div>
+<div class="skill-tile">HTML/CSS</div>
+<div class="skill-tile">R</div>
+<div class="skill-tile">C#</div>
+<div class="skill-tile">MySQL</div>
+<div class="skill-tile">Git/GitHub</div>
+<div class="skill-tile">Linux</div>
+<div class="skill-tile">Microsoft Office</div>
+<div class="skill-tile">IT Support</div>
+
+</div>
+</div>
+<!-- Soft Skills -->
+<div class="skills-category">
+<h3>Soft Skills</h3>
+<div class="skills-grid">
+<div class="skill-tile">Problem Solving</div>
+<div class="skill-tile">Critical Thinking</div>
+<div class="skill-tile">Communication</div>
+<div class="skill-tile">Teamwork</div>
+<div class="skill-tile">Leadership</div>
+<div class="skill-tile">Adaptability</div>
+<div class="skill-tile">Time Management</div>
+<div class="skill-tile">Project Management</div>
+<div class="skill-tile">Attention to Detail</div>
+<div class="skill-tile">Creativity</div>
+<div class="skill-tile">Analytical Thinking</div>
+<div class="skill-tile">Mentoring</div>
+<div class="skill-tile">Presentation</div>
+<div class="skill-tile">Research</div>
+<div class="skill-tile">Documentation</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer id="contact">
+<div class="container">
+<div class="footer-content">
+<h3>Get In Touch</h3>
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<span>dudajoseph22@gmail.com</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<span>+27 84 998 6821</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<span>Cape Town, South Africa</span>
+</div>
+</div>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/vusumzi-joseph-duda-9253a8297?trk=contact-info"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com/Jose22duda"><i class="fab fa-github"></i></a>
+</div>
+<div class="copyright">
+                    © 2024 Vusumzi Joseph Duda. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    btn.classList.add('active');
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animation on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.education-item, .course-category, .skill-tile, .experience-item, .skills-category');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animation
+            document.querySelectorAll('.education-item, .course-category, .skill-tile, .experience-item, .skills-category').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Stagger animation for skill tiles
+            document.querySelectorAll('.skill-tile').forEach((tile, index) => {
+                tile.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+            
+            // Add click effect to skill tiles
+            document.querySelectorAll('.skill-tile').forEach(tile => {
+                tile.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
