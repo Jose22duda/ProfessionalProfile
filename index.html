@@ -689,11 +689,12 @@
         nav ul li a::before,
         .tab-btn::before,
         .education-item::before,
-        .course-category::before,
+        .course-category::before{pointer-events: none;},
         .skill-tile::before,
         .experience-item::before {
-    pointer-events: none;
-}
+           pointer-events: none;
+        }
+
         /* Animations */
         @keyframes slideIn {
             from {
